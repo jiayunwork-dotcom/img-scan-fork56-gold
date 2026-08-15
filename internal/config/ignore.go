@@ -89,7 +89,7 @@ func GetExitCode(result *ScanResult, failOn Severity, ignore *IgnoreList) int {
 
 	var critical, high int
 	for _, v := range vulns {
-		if severityOrder[v.Severity] > targetLevel {
+		if severityOrder[v.Severity] >= targetLevel {
 			switch v.Severity {
 			case SeverityCritical:
 				critical++
